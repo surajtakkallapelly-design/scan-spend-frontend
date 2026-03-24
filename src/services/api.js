@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-export const API_BASE = import.meta?.env?.VITE_API_BASE || 'http://localhost:8080/api';
+// Default to deployed backend if env var is missing (Render builds can omit env at times)
+export const API_BASE = import.meta?.env?.VITE_API_BASE || 'https://scan-spend-backend.onrender.com/api';
 export const API_HOST = API_BASE.replace(/\/api$/, '');
 
 const api = axios.create({
